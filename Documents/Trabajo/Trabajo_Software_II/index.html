@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Hotel Boutique</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+
+    <body>
+
+        <header class="header">
+
+            <img class="bg" src="images/Hotel.jpg" alt="Hotel">
+
+            <div class="overlay"></div>
+
+            <div class="menu">
+
+                <div class="container menu-content">
+
+                    <a href="#" class="logo">Hotel Boutique</a>
+
+                    <nav class="navbar">
+                        <ul>
+                            <li><a href="#">Inicio</a></li>
+                            <li><a href="#">Servicios</a></li>
+                            <li><a href="#habitaciones">Habitaciones</a></li>
+                            <li><a href="#">Contacto</a></li>
+                        </ul>
+                    </nav>
+
+                    <a href="#" class="iniciar-btn">Iniciar sesión</a>
+                    <a href="#" class="registrarse-btn">Registrarse</a>
+
+                </div>
+            </div>
+
+            <div class="header-content container">
+
+                <div class="header-txt">
+
+                    <h1>HOTEL BOUTIQUE</h1>
+
+                    <p>Experiencia, confort y exclusividad</p>
+
+                    <div class="botones">
+
+                        <a href="#habitaciones" class="btn-1">VER HABITACIONES</a>
+                        <a href="#reservar" class="btn-2">RESERVAR AHORA</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <section id="habitaciones" class="habitaciones container">
+
+            <h2>Habitaciones</h2>
+
+            <p>
+            Espacios diseñados con elegancia y atención para brindarte la mejor experiencia.
+            </p>
+
+            <div class="habitaciones-content">
+
+                <div class="habitacion">
+
+                    <img src="images/hb1.jpeg" alt="Habitación estándar">
+
+                    <h3>Estándar</h3>
+
+                    <p class="precio">$120 / noche</p>
+
+                    <button class="btn-info">Ver información</button>
+
+                    <div class="info-habitacion">
+
+                        <p>
+                        Habitación cómoda para 2 personas. Incluye WiFi,
+                        televisión, aire acondicionado y desayuno incluido.
+                        </p>
+
+                        <a href="#reservar" class="btn-reservar">Reservar</a>
+
+                    </div>
+
+                </div>      
+
+                <div class="habitacion">
+
+                    <img src="images/photo-1702411200201-3061d0eea802.jpeg" alt="Suite">
+
+                    <h3>Suite</h3>
+
+                    <p class="precio">$220 / noche</p>
+
+                    <button class="btn-info">Ver información</button>
+
+                    <div class="info-habitacion">
+
+                        <p>
+                        Suite de lujo con cama king, balcón privado,
+                        minibar y vista panorámica.
+                        </p>
+
+                        <a href="#reservar" class="btn-reservar">Reservar</a>
+
+                    </div>
+
+                </div>
+
+                <div class="habitacion">
+
+                    <img src="images/hb3.jpeg" alt="Habitación familiar">
+
+                    <h3>Familiar</h3>
+
+                    <p class="precio">$180 / noche</p>
+
+                    <button class="btn-info">Ver información</button>
+
+                    <div class="info-habitacion">   
+
+                        <p>
+                        Habitación amplia ideal para familias.
+                        Incluye 2 camas dobles, WiFi y servicio a la habitación.
+                        </p>
+
+                        <a href="#reservar" class="btn-reservar">Reservar</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+            <section class="info">
+
+            </section>
+            <section class="servicios">
+
+            <div class="container">
+
+                <h2>Nuestros Servicios</h2>
+                <p>Disfruta de nuestras instalaciones de primera clase</p>
+
+                <div class="servicios-content">
+
+                    <div class="servicio">
+
+                        <div class="icono">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+
+                        <h3>Wifi</h3>
+                        <p>Internet de alta velocidad</p>
+
+                    </div>
+
+
+                    <div class="servicio">
+
+                        <div class="icono">
+                            <i class="fas fa-swimming-pool"></i>
+                        </div>
+
+                        <h3>Piscina</h3>
+                        <p>Piscina climatizada</p>
+
+                    </div>
+
+
+                    <div class="servicio">
+
+                        <div class="icono">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+
+                        <h3>Restaurante</h3>
+                        <p>Gastronomía de lujo</p>
+
+                    </div>
+
+
+                    <div class="servicio">
+
+                        <div class="icono">
+                            <i class="fas fa-spa"></i>
+                        </div>
+
+                        <h3>Spa</h3>
+                        <p>Relajación y bienestar</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <section class="buscar" id="reservar">
+
+                <div class="container">
+
+                    <h2>Buscar Disponibilidad</h2>
+                    <p>Encuentra la habitación perfecta para tu estadía</p>
+
+                    <div class="form-busqueda">
+
+                        <div class="campo">
+                            <label>Check-in</label>
+                            <input type="date">
+                        </div>
+
+                        <div class="campo">
+                            <label>Check-out</label>
+                            <input type="date">
+                        </div>
+
+                        <div class="campo">
+                            <label>Huéspedes</label>
+                            <input type="number" value="2" min="1">
+                        </div>
+
+                        <div class="campo">
+                            <label>Tipo de habitación</label>
+                            <select>
+                            <option>Cualquiera</option>
+                            <option>Estandar</option>
+                            <option>Suite</option>
+                            <option>Familiar</option>
+                            </select>
+                        </div>
+
+                        <div class="campo">
+                            <label>Preferencia (vista)</label>
+                            <select>
+                            <option>Cualquiera</option>
+                            <option>Mar</option>
+                            <option>Ciudad</option>
+                            <option>Jardín</option>
+                            </select>
+                        </div>
+
+                        <div class="campo">
+                            <label>Preferencia (piso)</label>
+                            <select>
+                            <option>Cualquiera</option>
+                            <option>Piso bajo</option>
+                            <option>Piso medio</option>
+                            <option>Piso alto</option>
+                            </select>
+                        </div>
+
+                        <button class="btn-buscar">🔎 BUSCAR</button>
+
+                        <p class="info-extra">
+                        Disponibilidad en tiempo real · Respuesta rápida · Diseño responsive
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+        </section>
+
+        <script src="script.js"></script>
+
+    </body>
+</html>
