@@ -162,6 +162,43 @@ const listarReservas = async (req, res) => {
   }
 };
 
+const listarReservasPorUsuario = async (req, res) => {
+  try {
+    const { id_usuario } = req.params;
+
+    const [usuario] = await pool.query(
+      'SELECT id_usuario FROM usuarios WHERE id_usuario = ?',
+      [id_usuario]
+    );
+
+    if (usuario.length === 0) {
+      return res.status(404).json({
+        mensaje: 'Usuario no encontrado'
+      });
+    }
+
+    const [rows] = await pool.query(
+      `SELECT r.id_reserva, r.fecha_inicio, r.fecha_fin, r.estado, r.total, r.fecha_creacion,
+              h.id_habitacion, h.numero AS numero_habitacion, h.piso,
+              t.nombre AS tipo_habitacion, d.precio_noche
+       FROM reservas r
+       INNER JOIN detalle_reserva d ON r.id_reserva = d.id_reserva
+       INNER JOIN habitaciones h ON d.id_habitacion = h.id_habitacion
+       INNER JOIN tipos_habitacion t ON h.id_tipo = t.id_tipo
+       WHERE r.id_usuario = ?
+       ORDER BY r.id_reserva DESC`,
+      [id_usuario]
+    );
+
+    res.json(rows);
+  } catch (error) {
+    console.error('Error al listar reservas del usuario:', error);
+    res.status(500).json({
+      mensaje: 'Error al listar reservas del usuario'
+    });
+  }
+};
+
 const obtenerReservaPorId = async (req, res) => {
   try {
     const { id } = req.params;
@@ -256,6 +293,7 @@ const cancelarReserva = async (req, res) => {
 module.exports = {
   crearReserva,
   listarReservas,
+  listarReservasPorUsuario,
   obtenerReservaPorId,
   cancelarReserva
 };
