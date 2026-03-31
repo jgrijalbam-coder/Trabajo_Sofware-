@@ -1,281 +1,407 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Boutique</title>
 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-        <title>Hotel Boutique</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    <header class="header">
 
-        <link rel="stylesheet" href="style.css">
+        <img class="bg" src="images/Hotel.jpg" alt="Hotel">
 
-    </head>
+        <div class="overlay"></div>
 
-    <body>
+        <div class="menu">
+            <div class="container menu-content">
 
-        <header class="header">
+                <a href="#" class="logo">Hotel Boutique</a>
 
-            <img class="bg" src="images/Hotel.jpg" alt="Hotel">
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#habitaciones">Habitaciones</a></li>
+                        <li><a href="#reservar">Contacto</a></li>
+                    </ul>
+                </nav>
 
-            <div class="overlay"></div>
-
-            <div class="menu">
-
-                <div class="container menu-content">
-
-                    <a href="#" class="logo">Hotel Boutique</a>
-
-                    <nav class="navbar">
-                        <ul>
-                            <li><a href="#">Inicio</a></li>
-                            <li><a href="#">Servicios</a></li>
-                            <li><a href="#habitaciones">Habitaciones</a></li>
-                            <li><a href="#">Contacto</a></li>
-                        </ul>
-                    </nav>
-
-                    <a href="#" class="iniciar-btn">Iniciar sesión</a>
-                    <a href="#" class="registrarse-btn">Registrarse</a>
-
-                </div>
-            </div>
-
-            <div class="header-content container">
-
-                <div class="header-txt">
-
-                    <h1>HOTEL BOUTIQUE</h1>
-
-                    <p>Experiencia, confort y exclusividad</p>
-
-                    <div class="botones">
-
-                        <a href="#habitaciones" class="btn-1">VER HABITACIONES</a>
-                        <a href="#reservar" class="btn-2">RESERVAR AHORA</a>
-
-                    </div>
-
+                <div class="auth-buttons" id="authButtons">
+                    <a href="#" class="iniciar-btn" id="abrirLogin">Iniciar sesión</a>
+                    <a href="#" class="registrarse-btn" id="abrirRegistro">Registrarse</a>
                 </div>
 
             </div>
+        </div>
 
-        </header>
+        <div class="header-content container">
+            <div class="header-txt">
+                <h1>HOTEL BOUTIQUE</h1>
+                <p>Experiencia, confort y exclusividad</p>
 
-        <section id="habitaciones" class="habitaciones container">
+                <div class="botones">
+                    <a href="#habitaciones" class="btn-1">VER HABITACIONES</a>
+                    <a href="#reservar" class="btn-2">RESERVAR AHORA</a>
+                </div>
+            </div>
+        </div>
 
-            <h2>Habitaciones</h2>
+    </header>
 
-            <p>
+    <section id="habitaciones" class="habitaciones container">
+        <h2>Habitaciones</h2>
+        <p>
             Espacios diseñados con elegancia y atención para brindarte la mejor experiencia.
-            </p>
+        </p>
 
-            <div class="habitaciones-content">
+        <div class="habitaciones-content">
 
-                <div class="habitacion">
+            <div class="habitacion" data-id-habitacion="1">
+                <img src="images/hb1.jpeg" alt="Habitación estándar">
+                <h3>Estándar</h3>
+                <p class="precio">$120 / noche</p>
+                <button class="btn-info">Ver información</button>
 
-                    <img src="images/hb1.jpeg" alt="Habitación estándar">
-
-                    <h3>Estándar</h3>
-
-                    <p class="precio">$120 / noche</p>
-
-                    <button class="btn-info">Ver información</button>
-
-                    <div class="info-habitacion">
-
-                        <p>
+                <div class="info-habitacion">
+                    <p>
                         Habitación cómoda para 2 personas. Incluye WiFi,
                         televisión, aire acondicionado y desayuno incluido.
-                        </p>
+                    </p>
+                    <a href="#reservar" class="btn-reservar" data-id-habitacion="1">Reservar</a>
+                </div>
+            </div>
 
-                        <a href="#reservar" class="btn-reservar">Reservar</a>
+            <div class="habitacion" data-id-habitacion="2">
+                <img src="images/photo-1702411200201-3061d0eea802.jpeg" alt="Suite">
+                <h3>Suite</h3>
+                <p class="precio">$220 / noche</p>
+                <button class="btn-info">Ver información</button>
 
-                    </div>
-
-                </div>      
-
-                <div class="habitacion">
-
-                    <img src="images/photo-1702411200201-3061d0eea802.jpeg" alt="Suite">
-
-                    <h3>Suite</h3>
-
-                    <p class="precio">$220 / noche</p>
-
-                    <button class="btn-info">Ver información</button>
-
-                    <div class="info-habitacion">
-
-                        <p>
+                <div class="info-habitacion">
+                    <p>
                         Suite de lujo con cama king, balcón privado,
                         minibar y vista panorámica.
-                        </p>
-
-                        <a href="#reservar" class="btn-reservar">Reservar</a>
-
-                    </div>
-
+                    </p>
+                    <a href="#reservar" class="btn-reservar" data-id-habitacion="2">Reservar</a>
                 </div>
+            </div>
 
-                <div class="habitacion">
+            <div class="habitacion" data-id-habitacion="3">
+                <img src="images/hb3.jpeg" alt="Habitación familiar">
+                <h3>Familiar</h3>
+                <p class="precio">$180 / noche</p>
+                <button class="btn-info">Ver información</button>
 
-                    <img src="images/hb3.jpeg" alt="Habitación familiar">
-
-                    <h3>Familiar</h3>
-
-                    <p class="precio">$180 / noche</p>
-
-                    <button class="btn-info">Ver información</button>
-
-                    <div class="info-habitacion">   
-
-                        <p>
+                <div class="info-habitacion">
+                    <p>
                         Habitación amplia ideal para familias.
                         Incluye 2 camas dobles, WiFi y servicio a la habitación.
-                        </p>
+                    </p>
+                    <a href="#reservar" class="btn-reservar" data-id-habitacion="3">Reservar</a>
+                </div>
+            </div>
 
-                        <a href="#reservar" class="btn-reservar">Reservar</a>
+        </div>
+    </section>
 
+    <section class="info"></section>
+
+    <section class="servicios" id="servicios">
+        <div class="container">
+            <h2>Nuestros Servicios</h2>
+            <p>Disfruta de nuestras instalaciones de primera clase</p>
+
+            <div class="servicios-content">
+
+                <div class="servicio">
+                    <div class="icono">
+                        <i class="fas fa-wifi"></i>
                     </div>
+                    <h3>Wifi</h3>
+                    <p>Internet de alta velocidad</p>
+                </div>
 
+                <div class="servicio">
+                    <div class="icono">
+                        <i class="fas fa-swimming-pool"></i>
+                    </div>
+                    <h3>Piscina</h3>
+                    <p>Piscina climatizada</p>
+                </div>
+
+                <div class="servicio">
+                    <div class="icono">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Restaurante</h3>
+                    <p>Gastronomía de lujo</p>
+                </div>
+
+                <div class="servicio">
+                    <div class="icono">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Spa</h3>
+                    <p>Relajación y bienestar</p>
                 </div>
 
             </div>
+        </div>
 
-        </section>
-
-            <section class="info">
-
-            </section>
-            <section class="servicios">
-
+        <section class="buscar" id="reservar">
             <div class="container">
+                <h2>Buscar Disponibilidad</h2>
+                <p>Encuentra la habitación perfecta para tu estadía</p>
 
-                <h2>Nuestros Servicios</h2>
-                <p>Disfruta de nuestras instalaciones de primera clase</p>
+                <div class="form-busqueda">
 
-                <div class="servicios-content">
-
-                    <div class="servicio">
-
-                        <div class="icono">
-                            <i class="fas fa-wifi"></i>
-                        </div>
-
-                        <h3>Wifi</h3>
-                        <p>Internet de alta velocidad</p>
-
+                    <div class="campo">
+                        <label for="fechaInicioReserva">Check-in</label>
+                        <input type="date" id="fechaInicioReserva">
                     </div>
 
-
-                    <div class="servicio">
-
-                        <div class="icono">
-                            <i class="fas fa-swimming-pool"></i>
-                        </div>
-
-                        <h3>Piscina</h3>
-                        <p>Piscina climatizada</p>
-
+                    <div class="campo">
+                        <label for="fechaFinReserva">Check-out</label>
+                        <input type="date" id="fechaFinReserva">
                     </div>
 
-
-                    <div class="servicio">
-
-                        <div class="icono">
-                            <i class="fas fa-utensils"></i>
-                        </div>
-
-                        <h3>Restaurante</h3>
-                        <p>Gastronomía de lujo</p>
-
+                    <div class="campo">
+                        <label for="huespedesReserva">Huéspedes</label>
+                        <input type="number" id="huespedesReserva" value="2" min="1">
                     </div>
 
-
-                    <div class="servicio">
-
-                        <div class="icono">
-                            <i class="fas fa-spa"></i>
-                        </div>
-
-                        <h3>Spa</h3>
-                        <p>Relajación y bienestar</p>
-
+                    <div class="campo">
+                        <label for="tipoHabitacionReserva">Tipo de habitación</label>
+                        <select id="tipoHabitacionReserva">
+                            <option value="Cualquiera">Cualquiera</option>
+                            <option value="estandar">Estándar</option>
+                            <option value="suite">Suite</option>
+                            <option value="familiar">Familiar</option>
+                        </select>
                     </div>
 
-                </div>
+                    <div class="campo">
+                        <label for="vistaReserva">Preferencia (vista)</label>
+                        <select id="vistaReserva">
+                            <option value="Cualquiera">Cualquiera</option>
+                            <option value="mar">Mar</option>
+                            <option value="ciudad">Ciudad</option>
+                            <option value="jardin">Jardín</option>
+                        </select>
+                    </div>
 
-            </div>
-            <section class="buscar" id="reservar">
+                    <div class="campo">
+                        <label for="pisoReserva">Preferencia (piso)</label>
+                        <select id="pisoReserva">
+                            <option value="Cualquiera">Cualquiera</option>
+                            <option value="Piso bajo">Piso bajo</option>
+                            <option value="Piso medio">Piso medio</option>
+                            <option value="Piso alto">Piso alto</option>
+                        </select>
+                    </div>
 
-                <div class="container">
+                    <button class="btn-buscar" type="button" id="btnBuscarReserva">🔎 BUSCAR</button>
 
-                    <h2>Buscar Disponibilidad</h2>
-                    <p>Encuentra la habitación perfecta para tu estadía</p>
-
-                    <div class="form-busqueda">
-
-                        <div class="campo">
-                            <label>Check-in</label>
-                            <input type="date">
-                        </div>
-
-                        <div class="campo">
-                            <label>Check-out</label>
-                            <input type="date">
-                        </div>
-
-                        <div class="campo">
-                            <label>Huéspedes</label>
-                            <input type="number" value="2" min="1">
-                        </div>
-
-                        <div class="campo">
-                            <label>Tipo de habitación</label>
-                            <select>
-                            <option>Cualquiera</option>
-                            <option>Estandar</option>
-                            <option>Suite</option>
-                            <option>Familiar</option>
-                            </select>
-                        </div>
-
-                        <div class="campo">
-                            <label>Preferencia (vista)</label>
-                            <select>
-                            <option>Cualquiera</option>
-                            <option>Mar</option>
-                            <option>Ciudad</option>
-                            <option>Jardín</option>
-                            </select>
-                        </div>
-
-                        <div class="campo">
-                            <label>Preferencia (piso)</label>
-                            <select>
-                            <option>Cualquiera</option>
-                            <option>Piso bajo</option>
-                            <option>Piso medio</option>
-                            <option>Piso alto</option>
-                            </select>
-                        </div>
-
-                        <button class="btn-buscar">🔎 BUSCAR</button>
-
-                        <p class="info-extra">
+                    <p class="info-extra" id="mensajeReserva">
                         Disponibilidad en tiempo real · Respuesta rápida · Diseño responsive
-                        </p>
-
-                    </div>
+                    </p>
 
                 </div>
 
-            </section>
+                <div id="resultadosHabitaciones" class="resultados-habitaciones"></div>
+
+                <div id="resumenReserva" class="resumen-reserva oculto">
+                    <h3>Resumen de tu reserva</h3>
+
+                    <div class="resumen-grid">
+                        <div class="resumen-item">
+                            <span>Habitación</span>
+                            <strong id="resumenHabitacion">-</strong>
+                        </div>
+                        <div class="resumen-item">
+                            <span>Tipo</span>
+                            <strong id="resumenTipo">-</strong>
+                        </div>
+                        <div class="resumen-item">
+                            <span>Vista</span>
+                            <strong id="resumenVista">-</strong>
+                        </div>
+                        <div class="resumen-item">
+                            <span>Piso</span>
+                            <strong id="resumenPiso">-</strong>
+                        </div>
+                        <div class="resumen-item">
+                            <span>Precio por noche</span>
+                            <strong id="resumenPrecio">-</strong>
+                        </div>
+                        <div class="resumen-item">
+                            <span>Noches</span>
+                            <strong id="resumenNoches">-</strong>
+                        </div>
+                    </div>
+
+                    <div class="total-reserva">
+                        Total estimado: <strong id="resumenTotal">$0</strong>
+                    </div>
+
+                    <button type="button" class="btn-confirmar-reserva" id="btnConfirmarReserva">
+                        Confirmar reserva
+                    </button>
+                </div>
+            </div>
         </section>
+    </section>
 
-        <script src="script.js"></script>
+    <!-- MODAL LOGIN -->
+    <div class="modal-auth" id="modalLogin">
+        <div class="modal-contenido">
+            <button class="cerrar-modal" id="cerrarLogin">&times;</button>
 
-    </body>
+            <h2>Iniciar sesión</h2>
+
+            <form id="formLogin" class="form-auth">
+                <div class="campo">
+                    <label for="loginEmail">Correo electrónico</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+
+                <div class="campo">
+                    <label for="loginPassword">Contraseña</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+
+                <button type="submit" class="btn-auth">Ingresar</button>
+                <p id="mensajeLogin" class="mensaje-form"></p>
+            </form>
+
+            <div class="extra-auth">
+                <p>¿No tienes cuenta?</p>
+                <a href="#" id="irARegistro">Crear una cuenta</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL REGISTRO -->
+    <div class="modal-auth" id="modalRegistro">
+        <div class="modal-contenido modal-registro-contenido">
+            <button class="cerrar-modal" id="cerrarRegistro">&times;</button>
+
+            <h2>Registrarse</h2>
+
+            <form id="formRegistro" class="form-auth form-registro-grid">
+                <div class="campo">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" required>
+                </div>
+
+                <div class="campo">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" id="apellido">
+                </div>
+
+                <div class="campo">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="campo">
+                    <label for="telefono">Teléfono</label>
+                    <input type="text" id="telefono">
+                </div>
+
+                <div class="campo campo-ancho">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" id="direccion">
+                </div>
+
+                <div class="campo">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" required>
+                </div>
+
+                <div class="campo">
+                    <label for="id_rol">Rol</label>
+                    <select id="id_rol" required>
+                        <option value="3" selected>Cliente</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-auth btn-ancho">Crear cuenta</button>
+                <p id="mensajeRegistro" class="mensaje-form btn-ancho"></p>
+            </form>
+
+            <div class="extra-auth">
+                <p>¿Ya tienes cuenta?</p>
+                <a href="#" id="irALogin">Iniciar sesión</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL MI CUENTA -->
+    <div class="modal-auth" id="modalCuenta">
+        <div class="modal-contenido modal-registro-contenido">
+            <button class="cerrar-modal" id="cerrarCuenta">&times;</button>
+
+            <h2>Mi cuenta</h2>
+
+            <div class="panel-cuenta">
+                <p><strong>Nombre:</strong> <span id="cuentaNombre"></span></p>
+                <p><strong>Correo:</strong> <span id="cuentaEmail"></span></p>
+                <p><strong>Rol:</strong> <span id="cuentaRol"></span></p>
+            </div>
+
+            <div class="acciones-cuenta">
+                <button class="btn-auth" id="btnVerReservas" type="button">Mis reservas</button>
+                <button class="btn-auth btn-secundario" id="btnEditarPerfil" type="button">Mis datos</button>
+                <button class="btn-auth btn-cerrar-sesion" id="cerrarSesionBtn" type="button">Cerrar sesión</button>
+            </div>
+
+            <div id="panelReservas" class="panel-oculto">
+                <h3 class="subtitulo-panel">Mis reservas</h3>
+                <div id="listaReservas"></div>
+            </div>
+
+            <div id="panelEditarPerfil" class="panel-oculto">
+                <h3 class="subtitulo-panel">Editar mis datos</h3>
+
+                <form id="formEditarPerfil" class="form-auth form-registro-grid">
+                    <div class="campo">
+                        <label for="editNombre">Nombre</label>
+                        <input type="text" id="editNombre" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="editApellido">Apellido</label>
+                        <input type="text" id="editApellido">
+                    </div>
+
+                    <div class="campo">
+                        <label for="editEmail">Correo electrónico</label>
+                        <input type="email" id="editEmail" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="editTelefono">Teléfono</label>
+                        <input type="text" id="editTelefono">
+                    </div>
+
+                    <div class="campo campo-ancho">
+                        <label for="editDireccion">Dirección</label>
+                        <input type="text" id="editDireccion">
+                    </div>
+
+                    <button type="submit" class="btn-auth btn-ancho">Guardar cambios</button>
+                    <p id="mensajeEditarPerfil" class="mensaje-form btn-ancho"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="scrip.js"></script>
+</body>
 </html>
