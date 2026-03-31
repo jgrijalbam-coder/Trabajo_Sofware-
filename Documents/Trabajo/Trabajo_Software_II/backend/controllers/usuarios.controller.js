@@ -20,6 +20,35 @@ const listarUsuarios = async (req, res) => {
   }
 };
 
+const obtenerUsuarioPorId = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const [rows] = await pool.query(
+      `SELECT u.id_usuario, u.nombre, u.apellido, u.email, u.telefono,
+              u.direccion, u.estado, u.bloqueado, u.fecha_registro,
+              u.id_rol, r.nombre_rol
+       FROM usuarios u
+       INNER JOIN roles r ON u.id_rol = r.id_rol
+       WHERE u.id_usuario = ?`,
+      [id]
+    );
+
+    if (rows.length === 0) {
+      return res.status(404).json({
+        mensaje: 'Usuario no encontrado'
+      });
+    }
+
+    res.json(rows[0]);
+  } catch (error) {
+    console.error('Error al obtener usuario:', error);
+    res.status(500).json({
+      mensaje: 'Error al obtener usuario'
+    });
+  }
+};
+
 const registrarUsuario = async (req, res) => {
   try {
     const {
@@ -87,6 +116,7 @@ const loginUsuario = async (req, res) => {
 
     const [usuarios] = await pool.query(
       `SELECT u.id_usuario, u.nombre, u.apellido, u.email, u.password_hash,
+              u.telefono, u.direccion,
               u.estado, u.bloqueado, u.intentos_login, u.id_rol, r.nombre_rol
        FROM usuarios u
        INNER JOIN roles r ON u.id_rol = r.id_rol
@@ -136,6 +166,8 @@ const loginUsuario = async (req, res) => {
         nombre: usuario.nombre,
         apellido: usuario.apellido,
         email: usuario.email,
+        telefono: usuario.telefono,
+        direccion: usuario.direccion,
         id_rol: usuario.id_rol,
         rol: usuario.nombre_rol
       }
@@ -148,8 +180,78 @@ const loginUsuario = async (req, res) => {
   }
 };
 
+const actualizarUsuario = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { nombre, apellido, email, telefono, direccion } = req.body;
+
+    if (!nombre || !email) {
+      return res.status(400).json({
+        mensaje: 'Nombre y email son obligatorios'
+      });
+    }
+
+    const [usuario] = await pool.query(
+      'SELECT id_usuario FROM usuarios WHERE id_usuario = ?',
+      [id]
+    );
+
+    if (usuario.length === 0) {
+      return res.status(404).json({
+        mensaje: 'Usuario no encontrado'
+      });
+    }
+
+    const [correoExistente] = await pool.query(
+      'SELECT id_usuario FROM usuarios WHERE email = ? AND id_usuario <> ?',
+      [email, id]
+    );
+
+    if (correoExistente.length > 0) {
+      return res.status(400).json({
+        mensaje: 'Ese correo ya está en uso por otro usuario'
+      });
+    }
+
+    await pool.query(
+      `UPDATE usuarios
+       SET nombre = ?, apellido = ?, email = ?, telefono = ?, direccion = ?
+       WHERE id_usuario = ?`,
+      [
+        nombre,
+        apellido || null,
+        email,
+        telefono || null,
+        direccion || null,
+        id
+      ]
+    );
+
+    const [usuarioActualizado] = await pool.query(
+      `SELECT u.id_usuario, u.nombre, u.apellido, u.email, u.telefono,
+              u.direccion, u.id_rol, r.nombre_rol
+       FROM usuarios u
+       INNER JOIN roles r ON u.id_rol = r.id_rol
+       WHERE u.id_usuario = ?`,
+      [id]
+    );
+
+    res.json({
+      mensaje: 'Usuario actualizado correctamente',
+      usuario: usuarioActualizado[0]
+    });
+  } catch (error) {
+    console.error('Error al actualizar usuario:', error);
+    res.status(500).json({
+      mensaje: 'Error al actualizar usuario'
+    });
+  }
+};
+
 module.exports = {
   listarUsuarios,
+  obtenerUsuarioPorId,
   registrarUsuario,
-  loginUsuario
+  loginUsuario,
+  actualizarUsuario
 };
