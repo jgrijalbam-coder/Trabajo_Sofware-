@@ -3,12 +3,14 @@ const router = express.Router();
 const {
   crearReserva,
   listarReservas,
+  listarReservasPorUsuario,
   obtenerReservaPorId,
   cancelarReserva
 } = require('../controllers/reservas.controller');
 
 router.post('/', crearReserva);
 router.get('/', listarReservas);
+router.get('/usuario/:id_usuario', listarReservasPorUsuario);
 router.get('/:id', obtenerReservaPorId);
 router.delete('/:id', cancelarReserva);
 
